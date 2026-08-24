@@ -1,0 +1,376 @@
+/* ---------------------------------------------------------------------------
+   Nemo Explores — landing page styles.
+
+   Palette and type are deliberately the same as the Daisyworld project page,
+   so clicking into a project feels continuous rather than like a new site.
+   Each project owns its own styles; this file is only for the landing page.
+--------------------------------------------------------------------------- */
+
+:root {
+  --ink: #f3eedf;
+  --muted: #aaa99f;
+  --space: #070a09;
+  --panel: #101512e6;
+  --line: #ffffff1c;
+  --green: #a5d66f;
+  --amber: #f2b84b;
+  --coral: #ef715e;
+  --ice: #d9edf2;
+  --max: 1200px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--space);
+  color: var(--ink);
+  font-family: Manrope, system-ui, sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Film grain, same treatment as the project pages. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 20;
+  opacity: .12;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.24'/%3E%3C/svg%3E");
+}
+
+.stars {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 78% 12%, #1c3a2d 0, transparent 30%),
+    radial-gradient(circle at 12% 78%, #41291b 0, transparent 32%),
+    var(--space);
+}
+.stars::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#fff .7px, transparent .7px);
+  background-size: 43px 43px;
+  opacity: .16;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 40px);
+}
+
+/* ---- nav ---- */
+
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(20px, 4vw, 64px);
+  z-index: 15;
+  background: linear-gradient(#070a09e8, transparent);
+  font-family: "DM Mono", ui-monospace, monospace;
+  font-size: 13px;
+  letter-spacing: .12em;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--ink);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.mark {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--green);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 14px #a5d66f55;
+  flex: none;
+}
+.mark::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--amber);
+}
+.nav-links { display: flex; gap: 28px; }
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--green); }
+
+/* ---- hero ---- */
+
+.hero {
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  padding: 140px 0 80px;
+}
+.eyebrow {
+  font-family: "DM Mono", ui-monospace, monospace;
+  font-size: 13px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 26px;
+}
+.eyebrow::before {
+  content: "";
+  width: 42px;
+  height: 1px;
+  background: var(--green);
+}
+h1 {
+  font-family: Fraunces, Georgia, serif;
+  font-weight: 300;
+  font-size: clamp(3.2rem, 9vw, 6.6rem);
+  line-height: .95;
+  margin: 0 0 28px;
+  letter-spacing: -.02em;
+}
+h1 em {
+  display: block;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--green);
+}
+.lede {
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  line-height: 1.65;
+  color: var(--ink);
+  max-width: 46ch;
+  margin: 0 0 36px;
+}
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 34px;
+  font-family: "DM Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ---- section headings ---- */
+
+section { padding: 70px 0; }
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 34px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+h2 {
+  font-family: Fraunces, Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+  margin: 0;
+  letter-spacing: -.01em;
+}
+.count {
+  font-family: "DM Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ---- project grid ---- */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 26px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color .25s, transform .25s;
+}
+.card:hover {
+  border-color: #a5d66f66;
+  transform: translateY(-3px);
+}
+.card:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+
+.card-img {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #0d100e;
+  border-bottom: 1px solid var(--line);
+}
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s ease;
+}
+.card:hover .card-img img { transform: scale(1.035); }
+
+.card-body { padding: 20px 22px 24px; }
+.card h3 {
+  font-family: Fraunces, Georgia, serif;
+  font-weight: 400;
+  font-size: 1.45rem;
+  margin: 0 0 8px;
+  letter-spacing: -.01em;
+}
+.card p {
+  margin: 0 0 16px;
+  font-size: .95rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.paper {
+  font-family: "DM Mono", ui-monospace, monospace;
+  font-size: 11.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin: 0 0 14px;
+}
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag {
+  font-family: "DM Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  padding: 4px 11px;
+}
+
+/* Placeholder card: the shape a future project drops into. */
+.card.soon {
+  border-style: dashed;
+  background: transparent;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 260px;
+  padding: 40px 24px;
+  cursor: default;
+}
+.card.soon:hover { transform: none; border-color: var(--line); }
+.card.soon .mark { margin: 0 auto 18px; opacity: .5; }
+.card.soon h3 { color: var(--muted); }
+.card.soon p { margin: 0; max-width: 30ch; }
+
+/* ---- about ---- */
+
+/* Lead paragraph: who makes these, and why these papers. Sits above the
+   three principles and outranks them — larger, and in --ink rather than
+   --muted. Width is capped because .wrap is 1200px, far too wide to read. */
+.bio {
+  max-width: 62ch;
+  margin: 0 0 44px;
+  padding-bottom: 34px;
+  border-bottom: 1px solid var(--line);
+}
+.bio-lede {
+  font-size: clamp(1.1rem, 2.1vw, 1.35rem);
+  line-height: 1.7;
+  color: var(--ink);
+  margin: 0 0 20px;
+}
+.bio-links {
+  margin: 0;
+  font-family: "DM Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.bio-links a {
+  color: var(--green);
+  text-decoration: none;
+  border-bottom: 1px solid #a5d66f44;
+  padding-bottom: 2px;
+  transition: border-color .2s;
+}
+.bio-links a:hover { border-color: var(--green); }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 34px;
+}
+.about-grid h3 {
+  font-family: "DM Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin: 0 0 12px;
+}
+.about-grid p {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--muted);
+  font-size: .97rem;
+}
+
+/* ---- footer ---- */
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 40px 0 60px;
+  font-family: "DM Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.foot-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+footer a { color: var(--muted); text-decoration: none; }
+footer a:hover { color: var(--green); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}

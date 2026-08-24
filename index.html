@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nemo Explores — Interactive Science Papers</title>
+<meta name="description" content="Interactive explainers that recreate and simulate scientific papers — run the model yourself, not just read about it.">
+
+<!-- Social preview. Once the site has a domain, make these absolute URLs
+     (e.g. https://your-domain/assets/tiles/daisyworld.jpg) — most platforms
+     will not resolve a relative og:image. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nemo Explores — Interactive Science Papers">
+<meta property="og:description" content="Interactive explainers that recreate and simulate scientific papers.">
+<meta property="og:image" content="assets/tiles/daisyworld.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<div class="stars" aria-hidden="true"></div>
+
+<nav class="nav">
+  <a class="brand" href="/">
+    <span class="mark" aria-hidden="true"></span>
+    Nemo Explores
+  </a>
+  <div class="nav-links">
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Interactive science</p>
+    <h1>Papers you<em>can play with</em></h1>
+    <p class="lede">
+      Scientific papers describe systems that move, settle, and break — but they
+      arrive as static equations on a page. These are those models rebuilt as
+      things you can run: change a parameter, watch the system respond, and see
+      for yourself why the result holds.
+    </p>
+    <div class="meta-row">
+      <span>Interactive explainers</span>
+      <span>Simulations from source papers</span>
+      <span>Companion to the videos</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- =====================================================================
+       PROJECTS
+
+       To add a project:
+         1. Create a folder at the repo root, e.g.  lorenz-attractor/
+         2. Put a screenshot at  assets/tiles/<folder>.jpg  (16:10)
+         3. Copy one <a class="card"> block below and edit it.
+       Newest first. See README.md for the full walkthrough.
+  ====================================================================== -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Projects</h2>
+        <span class="count">01 published</span>
+      </div>
+
+      <div class="grid">
+
+        <a class="card" href="daisyworld/">
+          <div class="card-img">
+            <img src="assets/tiles/daisyworld.jpg"
+                 alt="The Daisyworld model: a green planet covered in black and white daisies, showing a temperature readout of 21.8 degrees at equilibrium."
+                 loading="lazy" width="1600" height="1000">
+          </div>
+          <div class="card-body">
+            <h3>Daisyworld</h3>
+            <p class="paper">Watson &amp; Lovelock · Tellus · 1983</p>
+            <p>
+              Can life stabilize a planet's climate without planning to? Two
+              competing flower species regulate a world's temperature through
+              albedo alone — until the star grows bright enough to break it.
+            </p>
+            <div class="tags">
+              <span class="tag">Climate</span>
+              <span class="tag">Feedback</span>
+              <span class="tag">Live model</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Placeholder. Delete this block once there are enough real cards. -->
+        <div class="card soon">
+          <span class="mark" aria-hidden="true"></span>
+          <h3>Next one in progress</h3>
+          <p>More papers are being rebuilt. Each gets its own folder and its own interactive model.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>About</h2>
+      </div>
+
+      <div class="bio">
+        <p class="bio-lede">
+          I spent a PhD in geochemical oceanography building box models of the
+          ocean carbon cycle. Daisyworld is a box model too — a whole planet
+          reduced to a handful of coupled equations — which is why it is the
+          first one here. I write software now; these are the papers I kept
+          wanting to run rather than read.
+        </p>
+        <p class="bio-links">
+          <!-- TODO: replace # with the Google Scholar profile URL -->
+          <a href="#">Publications ↗</a>
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div>
+          <h3>The idea</h3>
+          <p>
+            A paper's central claim is usually a behaviour, not a number — this
+            feedback stabilizes, that threshold is sharp. Behaviour is hard to
+            get from a figure and easy to get from a model you can move.
+          </p>
+        </div>
+        <div>
+          <h3>How they are built</h3>
+          <p>
+            Each project implements the paper's actual equations, not an
+            animation of them. Where the original gives parameter values, those
+            are the defaults, so the reproduced figures really are reproduced.
+          </p>
+        </div>
+        <div>
+          <h3>Self-contained</h3>
+          <p>
+            Every project is a static page in its own folder, with no build step
+            and no server. Open the file and it runs — now, and in ten years.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-row">
+    <span>Nemo Explores</span>
+    <!-- TODO: add the channel URL here once it is public:
+         <a href="https://youtube.com/@your-handle">YouTube</a> -->
+    <span>Built to accompany the videos</span>
+  </div>
+</footer>
+
+</body>
+</html>
