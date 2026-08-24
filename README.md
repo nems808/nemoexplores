@@ -18,12 +18,22 @@ nemoexplores/
 │   ├── site.css            Landing-page styles.
 │   ├── favicon.svg         Site icon.
 │   └── tiles/              One preview image per project.
+│       ├── anemone.jpg
 │       └── daisyworld.jpg
-└── daisyworld/             One folder per project, self-contained.
+├── anemone/                One folder per project, self-contained.
+│   ├── index.html
+│   ├── app.css  app.js  carbonate.js
+│   ├── data/               Model output + the script that regenerates it.
+│   └── README.md           How this project's data and ports are verified.
+└── daisyworld/
     ├── index.html
     ├── three.min.js
     └── ...
 ```
+
+A project may carry its own `README.md` when it has something worth
+explaining — where its data came from, how to regenerate it, how a port was
+verified. `anemone/README.md` is the example.
 
 Two rules keep this simple as it grows:
 
