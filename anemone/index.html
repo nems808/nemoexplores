@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>How to Model a Planet — ANEMONE</title>
+<title>How to Model a Planet · ANEMONE</title>
 <meta name="description" content="Box models explained from one box to a working six-reservoir carbon cycle model. How long does a slug of CO2 actually stay in the air?">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How to Model a Planet">
@@ -26,7 +26,7 @@
     <span class="mark" aria-hidden="true"></span>
     Nemo Explores
   </a>
-  <div class="nav-links"><a href="#sources">Sources</a></div>
+  <div class="nav-links"><a href="#sources">References</a></div>
 </nav>
 
 <!-- ===================== HERO ===================== -->
@@ -36,15 +36,15 @@
     <h1>How to model<em>a planet</em></h1>
     <p class="lede">
       If we stopped emitting CO₂ today, how long until it is gone? The question
-      contains a false premise. Methane has a lifetime — about twelve years.
-      Carbon dioxide does not have one at all.
+      has a hidden assumption in it. Methane has a lifetime of about twelve
+      years. Carbon dioxide has no single lifetime at all.
     </p>
     <p class="lede-sub">
-      This page builds the machinery for answering that properly, one box at a
-      time, starting from something you already understand: a bathtub.
+      This page builds the machinery for answering that question properly, one
+      box at a time, starting from something you already understand: a bathtub.
     </p>
     <div class="meta-row">
-      <span>14 sections</span>
+      <span>18 sections</span>
       <span>Live chemistry</span>
       <span>Scroll to begin ↓</span>
     </div>
@@ -56,37 +56,37 @@
 <!-- ===================== 1. WHAT A BOX IS ===================== -->
 <section class="sec" id="s1">
   <div class="wrap narrow">
-    <p class="secnum">01 — The idea</p>
+    <p class="secnum">01 · The idea</p>
     <h2>A box is just bookkeeping</h2>
     <p>
-      A box model is the least clever idea in science, and that is its
-      strength. You draw a box around some part of the world, count what goes
-      in, count what comes out, and whatever is left is what is inside.
+      A <span class="term" data-term="box-model">box model</span> is the least
+      clever idea in science, and that is exactly its strength. You draw a box
+      around some part of the world, count what goes in, count what comes out,
+      and whatever is left over is what is inside.
     </p>
     <p>
-      Not <em>where</em> inside. Not what it is doing. A box has no interior
-      geography — everything in it is assumed perfectly mixed, one number for
-      the whole thing. That assumption is a lie, and it is the price of
-      admission. In exchange you get a model that runs a million years of
-      planetary chemistry in under a minute, and whose every term you can
-      point at and defend.
+      A box has no interior geography. Everything in it is treated as perfectly
+      mixed, one number for the whole thing, so the model can tell you how much
+      carbon is in the ocean but never whereabouts. As a result of this simplicity, we can build a model
+      that runs a million years of planetary chemistry in under a minute and
+      whose every term you can point at and defend.
     </p>
     <figure class="fig">
       <canvas id="c-onebox" height="240" aria-label="A single box with carbon flowing in and out"></canvas>
-      <figcaption>Carbon flows in, carbon flows out. The amount inside changes only when they differ.</figcaption>
+      <figcaption>Carbon flows in, carbon flows out. The amount inside changes only when the two differ.</figcaption>
     </figure>
     <div class="eq">
       <div class="eq-math">dN/dt = F<sub>in</sub> − F<sub>out</sub></div>
       <ul class="eq-gloss">
-        <li><b>dN/dt</b> — how fast the amount in the box is changing</li>
-        <li><b>F<sub>in</sub></b> — everything arriving, per year</li>
-        <li><b>F<sub>out</sub></b> — everything leaving, per year</li>
+        <li><b>dN/dt</b> · how fast the amount in the box is changing</li>
+        <li><b>F<sub>in</sub></b> · everything arriving, per year</li>
+        <li><b>F<sub>out</sub></b> · everything leaving, per year</li>
       </ul>
     </div>
     <p class="aside">
-      That is the whole equation. Every box, in every box model ever built, is
-      this sentence. The rest of this page is about what you put in
-      <b>F<sub>in</sub></b> and <b>F<sub>out</sub></b> — and how you know.
+      That is the whole equation. Every box in every box model ever built is
+      this one sentence. The rest of this page is about what you put into
+      <b>F<sub>in</sub></b> and <b>F<sub>out</sub></b>, and how you know.
     </p>
   </div>
 </section>
@@ -94,26 +94,26 @@
 <!-- ===================== 2. ONE BOX ===================== -->
 <section class="sec alt" id="s2">
   <div class="wrap narrow">
-    <p class="secnum">02 — One box</p>
+    <p class="secnum">02 · One box</p>
     <h2>The bathtub</h2>
     <p>
-      Give the outflow one property — that it is proportional to how full the
-      box is — and the box acquires a personality. A fuller bathtub pushes
-      harder on the drain. Written down, the outflow becomes
-      <b>N/τ</b>, where <b>τ</b> ("tau") is the residence time: how long a
-      typical molecule sticks around.
+      Give the outflow one property, that it grows in proportion to how full
+      the box is, and the box acquires a personality. A fuller bathtub pushes
+      harder on the drain. Written down, the outflow becomes <b>N/τ</b>, where
+      <b>τ</b> ("tau") is the
+      <span class="term" data-term="residence-time">residence time</span>.
     </p>
     <div class="eq">
       <div class="eq-math">dN/dt = F<sub>in</sub> − N/τ</div>
       <ul class="eq-gloss">
-        <li><b>N/τ</b> — the fuller the box, the faster it drains</li>
-        <li><b>τ</b> — residence time, in years</li>
+        <li><b>N/τ</b> · the fuller the box, the faster it drains</li>
+        <li><b>τ</b> · residence time, in years</li>
       </ul>
     </div>
     <p>
       Two things follow, and both matter later. The box settles at
-      <b>N = F<sub>in</sub> × τ</b> — inflow times residence time, no matter
-      where it started. And if you dump in a slug of extra carbon, the excess
+      <b>N = F<sub>in</sub> × τ</b>, inflow times residence time, wherever it
+      started from. And if you dump in a slug of extra carbon, the excess
       decays away as a clean exponential, <b>e<sup>−t/τ</sup></b>.
     </p>
     <div class="lab" data-lab="bathtub">
@@ -139,9 +139,9 @@
       </div>
     </div>
     <p class="aside">
-      Hold on to the exponential. The entire argument of this page is that the
-      atmosphere <em>is not this box</em> — and the way you find out is that a
-      single exponential cannot fit what really happens.
+      Hold on to that exponential. The whole argument of this page is that the
+      atmosphere behaves nothing like this box, and the way you find out is
+      that a single exponential cannot be made to fit what really happens.
     </p>
   </div>
 </section>
@@ -149,32 +149,33 @@
 <!-- ===================== 3. TWO BOXES ===================== -->
 <section class="sec" id="s3">
   <div class="wrap narrow">
-    <p class="secnum">03 — Two boxes</p>
+    <p class="secnum">03 · Two boxes</p>
     <h2>Air and ocean</h2>
     <p>
-      One box cannot represent a planet, because a planet has places carbon can
-      go. Add a second box for the ocean and connect them. The connecting flux
-      is driven by a <em>difference</em>: gas moves from wherever its pressure
-      is higher toward wherever it is lower, at a rate set by how fast the sea
-      surface can exchange.
+      One box cannot represent a planet, because a planet has places for carbon
+      to go. Add a second box for the ocean and connect the two. The connecting
+      flux is driven by a difference in
+      <span class="term" data-term="pco2">partial pressure</span>: gas moves
+      from wherever its pressure is higher toward wherever it is lower, at a
+      rate set by how quickly the sea surface can exchange.
     </p>
     <figure class="fig">
       <canvas id="c-twobox" height="300" aria-label="Two connected boxes exchanging carbon"></canvas>
-      <figcaption>Exchange runs both ways at once. Only the imbalance shows up as a net flux.</figcaption>
+      <figcaption>Exchange runs both ways at once. Only the imbalance between them shows up as a net flux.</figcaption>
     </figure>
     <div class="eq">
       <div class="eq-math">F<sub>as</sub> = k<sub>as</sub> ( pCO₂<sup>air</sup> − pCO₂<sup>sea</sup> )</div>
       <ul class="eq-gloss">
-        <li><b>F<sub>as</sub></b> — net carbon crossing the sea surface</li>
-        <li><b>pCO₂</b> — the "pushing pressure" of CO₂ on each side</li>
-        <li><b>k<sub>as</sub></b> — how fast the surface can exchange; sets a timescale of about a year</li>
+        <li><b>F<sub>as</sub></b> · net carbon crossing the sea surface</li>
+        <li><b>pCO₂</b> · the pushing pressure of CO₂ on each side</li>
+        <li><b>k<sub>as</sub></b> · how fast the surface can exchange, giving a timescale of about a year</li>
       </ul>
     </div>
     <p>
-      Everything now hinges on one question: <b>when you push carbon into
-      seawater, how much does its pCO₂ push back?</b> Answer that and you know
-      how much the ocean will take. Answer it wrong and you will be wrong by a
-      factor of four, in a direction that has fooled people repeatedly.
+      Everything now hangs on one question. <b>When you push carbon into
+      seawater, how hard does its pCO₂ push back?</b> Answer that and you know
+      how much the ocean will take. Get it wrong and you will be off by a
+      factor of four, in a direction that has fooled a lot of people.
     </p>
   </div>
 </section>
@@ -182,25 +183,31 @@
 <!-- ===================== 4. WHERE THE NUMBERS COME FROM ===================== -->
 <section class="sec alt" id="s4">
   <div class="wrap">
-    <p class="secnum">04 — Provenance</p>
+    <p class="secnum">04 · Provenance</p>
     <h2>Where the numbers come from</h2>
     <div class="narrow">
       <p>
         The fair objection to any model is that its numbers were chosen to make
-        the answer come out right. The defence is to make the choosing
-        visible — so here it is, in full.
+        the answer come out right. The defence is to make the choosing visible,
+        so here it is in full.
       </p>
       <p>
-        ANEMONE prescribes only quantities that are <em>measured</em>, and then
+        ANEMONE prescribes only quantities that have been measured, then
         derives everything else from a single requirement: that the
         preindustrial world sat still. If carbon was neither accumulating nor
-        draining away in 1750, the interior of the ocean has no freedom left.
-        Its concentrations follow from arithmetic.
+        draining away in 1750, then the interior of the ocean has no freedom
+        left. Its concentrations follow by arithmetic.
+      </p>
+      <p>
+        You do not have to take my word for any of this. The model is about a
+        thousand lines of Python and the calibration routine that produces the
+        right-hand column below is one function you can read in a few minutes:
+        <a class="link" href="https://github.com/nems808/ANEMONE" target="_blank" rel="noopener">github.com/nems808/ANEMONE</a>.
       </p>
     </div>
     <div class="prov">
       <div class="prov-col">
-        <h3>Prescribed — measured</h3>
+        <h3>Prescribed, because measured</h3>
         <ul class="prov-list" id="prov-in"></ul>
       </div>
       <div class="prov-arrow" aria-hidden="true">
@@ -208,17 +215,18 @@
         <svg viewBox="0 0 40 12" width="40" height="12"><path d="M0 6h32M27 1l6 5-6 5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
       </div>
       <div class="prov-col">
-        <h3>Derived — outputs</h3>
+        <h3>Derived, as outputs</h3>
         <ul class="prov-list" id="prov-out"></ul>
       </div>
     </div>
     <div class="narrow">
       <p class="aside">
-        Two of those derived numbers are the tell. The model was never asked to
-        produce an export production of <b id="pv-org">10</b> GtC/yr or a rain
-        ratio of <b id="pv-rain">0.12</b> — they fall out of the steady-state
-        requirement, and they happen to be what the ocean is observed to do.
-        That is the check that the bookkeeping is honest.
+        Two of those derived numbers are the tell. Nobody asked the model to
+        produce an <span class="term" data-term="export-production">export
+        production</span> of <b id="pv-org">10</b> GtC/yr or a
+        <span class="term" data-term="rain-ratio">rain ratio</span> of
+        <b id="pv-rain">0.12</b>. They fall out of the steady-state requirement,
+        and they happen to match what the ocean is observed to do.
       </p>
     </div>
   </div>
@@ -227,28 +235,36 @@
 <!-- ===================== 5. THERMODYNAMICS ===================== -->
 <section class="sec" id="s5">
   <div class="wrap">
-    <p class="secnum">05 — The certain part</p>
-    <h2>Chemistry is not a modelling choice</h2>
+    <p class="secnum">05 · The certain part</p>
+    <h2>Chemistry is not up for debate</h2>
     <div class="narrow">
       <p>
         Models get argued about because they contain judgement. This part
-        contains none. When CO₂ dissolves in seawater it reacts, and the
-        proportions it settles into are fixed by thermodynamics — the same law
-        that sets which way heat flows. Those proportions have been measured in
-        laboratories to four decimal places, published with uncertainties, and
-        re-measured by people hoping to find the first group wrong.
+        contains none of it. When CO₂ dissolves in seawater it reacts, and the
+        proportions it settles into are fixed by thermodynamics, the same law
+        that decides which way heat flows. Those proportions have been measured
+        in laboratories to four decimal places, published with their
+        uncertainties, and re-measured by people who would have been delighted
+        to prove the first group wrong.
       </p>
       <p>
         Everything in the panel below is computed live from those published
-        constants — Weiss, Lueker, Dickson, Millero, Mucci — the same code the
-        model runs. Nothing here is tuned. Nothing here <em>can</em> be tuned.
+        constants,<a class="ref" href="#ref-5">5</a><a class="ref" href="#ref-6">6</a><a class="ref" href="#ref-7">7</a><a class="ref" href="#ref-8">8</a><a class="ref" href="#ref-9">9</a>
+        running the same equations the model runs,<a class="ref" href="#ref-10">10</a>
+        including the boron that quietly does part of the buffering. Nothing here
+        has been tuned.
+        There is nothing here that <em>could</em> be tuned.
       </p>
     </div>
 
     <div class="lab wide" data-lab="chem">
       <div class="lab-head">
         <h3>Seawater carbonate system, live</h3>
-        <p>Dissolved carbon and alkalinity set everything else. Move them.</p>
+        <p>
+          <span class="term" data-term="dic">Dissolved carbon</span> and
+          <span class="term" data-term="alkalinity">alkalinity</span> set
+          everything else. Move them.
+        </p>
       </div>
       <div class="lab-body split">
         <div class="chem-viz">
@@ -271,10 +287,10 @@
             <input type="range" id="r-temp" min="0" max="30" step="0.5" value="13">
           </label>
           <div class="readout">
-            <div><span>pCO₂</span><b id="v-pco2">—</b><i>µatm</i></div>
-            <div><span>pH</span><b id="v-ph">—</b><i>total scale</i></div>
-            <div><span>Carbonate ion</span><b id="v-co3">—</b><i>µmol/kg</i></div>
-            <div class="hi"><span>Revelle factor</span><b id="v-rev">—</b><i>the buffer</i></div>
+            <div><span>pCO₂</span><b id="v-pco2">·</b><i>µatm</i></div>
+            <div><span>pH</span><b id="v-ph">·</b><i>total scale</i></div>
+            <div><span>Carbonate ion</span><b id="v-co3">·</b><i>µmol/kg</i></div>
+            <div class="hi"><span>Revelle factor</span><b id="v-rev">·</b><i>the buffer</i></div>
           </div>
           <button class="btn small" id="b-preind">Preindustrial surface</button>
         </div>
@@ -283,15 +299,17 @@
 
     <div class="narrow">
       <p>
-        The number to watch is the <b>Revelle factor</b>. It answers the
-        question from the last section: raise dissolved carbon by 1%, and pCO₂
-        rises by about 10%. The ocean pushes back ten times harder than you
-        pushed. That is the buffer, and it is the single most important number
-        in the carbon cycle.
+        The number to watch is the
+        <span class="term" data-term="revelle">Revelle factor</span>. It answers
+        the question from the last section. Raise dissolved carbon by 1% and
+        pCO₂ rises by about 10%, so the ocean pushes back roughly ten times
+        harder than you pushed. That is the buffer, and it is arguably the most
+        important single number in the carbon cycle.
       </p>
       <p>
-        Now drag DIC to the right and watch the Revelle factor climb. <b>The
-        buffer weakens as you use it.</b> Hold that thought until section 13.
+        Now drag DIC to the right and watch the Revelle factor climb.
+        <b>The buffer weakens as you use it.</b> Hold that thought until
+        section 14.
       </p>
     </div>
   </div>
@@ -300,30 +318,29 @@
 <!-- ===================== 6-10. THE STAGES ===================== -->
 <section class="sec alt" id="s6">
   <div class="wrap narrow">
-    <p class="secnum">06 — Stage one</p>
+    <p class="secnum">06 · Stage one</p>
     <h2>The ocean as soda water</h2>
     <p>
-      Start with the simplest defensible ocean: CO₂ dissolves in it exactly as
-      it dissolves in a fizzy drink, following Henry's law, and nothing further
+      Start with the simplest defensible ocean. CO₂ dissolves in it the way it
+      dissolves in a fizzy drink, following Henry's law, and nothing further
       happens. Instant mixing, no chemistry, no biology.
     </p>
     <p>
-      Two intuitions compete here, and it is worth committing to one before
-      reading on. The <em>reservoir argument</em>: the ocean holds about sixty
-      times the carbon the atmosphere does, so it should swallow around 98% of
-      anything we emit. The <em>soda-water argument</em>: run Henry's law and
-      see.
+      Two intuitions compete here, and it is worth committing to one before you
+      read on. The reservoir argument says the ocean holds about sixty times
+      the carbon the atmosphere does, so it ought to swallow around 98% of
+      whatever we emit. The soda-water argument says run Henry's law and see.
     </p>
     <div class="reveal" data-reveal="stage1">
       <button class="btn">Run stage 1</button>
       <div class="reveal-body">
         <p class="big-num">76% <span>still in the air, forever</span></p>
         <p>
-          Both intuitions are wrong, and they are wrong from opposite sides.
-          As plain soda water the ocean holds only about <b>200 GtC</b> of
-          dissolved CO₂ — <em>less than the atmosphere</em>. The sixty-fold
-          reservoir is real, but almost none of it is dissolved gas. It is
-          something else, and that something else is the next section.
+          Both intuitions miss, and they miss from opposite sides. As plain
+          soda water the ocean holds only about <b>200 GtC</b> of dissolved
+          CO₂, which is less than the atmosphere contains. The sixtyfold
+          reservoir is real enough, but hardly any of it is dissolved gas. It
+          is something else, and that something else is the next section.
         </p>
       </div>
     </div>
@@ -332,26 +349,26 @@
 
 <section class="sec" id="s7">
   <div class="wrap narrow">
-    <p class="secnum">07 — Stage two</p>
+    <p class="secnum">07 · Stage two</p>
     <h2>The reaction that does the work</h2>
     <p>
       Dissolved CO₂ does not stay as CO₂. It reacts with water and with the
-      carbonate ion already in seawater, and almost all of it ends up as
-      bicarbonate. That is where the ocean's enormous carbon inventory
-      actually lives — not as gas, but as ions.
+      carbonate ion already present in seawater, and almost all of it ends up
+      as bicarbonate. That is where the ocean's enormous carbon inventory
+      actually lives, as ions rather than as gas.
     </p>
     <div class="eq">
       <div class="eq-math">CO₂ + H₂O + CO₃²⁻ ⇌ 2 HCO₃⁻</div>
       <ul class="eq-gloss">
-        <li>Incoming CO₂ is <b>consumed</b>, so it stops pushing back</li>
-        <li>But it <b>eats a carbonate ion</b> to do it</li>
-        <li>Fewer carbonate ions left ⇒ the next molecule is harder to absorb</li>
+        <li>Incoming CO₂ gets <b>consumed</b>, so it stops pushing back</li>
+        <li>It <b>eats a carbonate ion</b> in the process</li>
+        <li>Fewer carbonate ions left means the next molecule is harder to absorb</li>
       </ul>
     </div>
     <p>
-      Adding this one reaction moves the answer by a factor of four — from 76%
-      airborne to 18%. It is the largest single correction anywhere in the
-      model, and it is pure thermodynamics: nothing was fitted to get it.
+      Adding this one reaction moves the answer by a factor of four, from 76%
+      airborne down to 18%. It is the largest single correction anywhere in the
+      model, and it comes straight out of thermodynamics with nothing fitted.
     </p>
     <figure class="fig">
       <canvas id="c-stage12" height="300" aria-label="Stage 1 versus stage 2 airborne fraction"></canvas>
@@ -362,54 +379,58 @@
 
 <section class="sec alt" id="s8">
   <div class="wrap narrow">
-    <p class="secnum">08 — Stage three</p>
+    <p class="secnum">08 · Stage three</p>
     <h2>The ocean is not one box</h2>
     <p>
       Stage 2 assumed the whole ocean mixes instantly. It does not. Surface
-      water exchanges with the deep on timescales of centuries, and until it
-      does, the deep ocean's enormous capacity is simply unavailable.
+      water exchanges with the deep over centuries, and until it does, the deep
+      ocean's enormous capacity is simply unavailable.
     </p>
     <p>
-      So the ocean gets split — surface, thermocline, deep — with carbon moved
-      between them at prescribed rates. Why three and not two? Because the real
-      decay has both a decades-long mode and a centuries-long one, and
-      <b>a two-box ocean has exactly one mixing timescale</b>. Tune it to match
-      the century and it overshoots the millennium. This was tried first. It
-      does not work.
+      So the ocean gets split into three: surface, then the
+      <span class="term" data-term="thermocline">thermocline</span>, then the
+      deep, with carbon moved between them at prescribed
+      <span class="term" data-term="ventilation">ventilation</span> rates. Why
+      three rather than two? Because the real decay has both a decades-long
+      mode and a centuries-long one, while a two-box ocean has exactly one
+      mixing timescale. Tune it to match the century and it overshoots the
+      millennium. That was tried first, and it does not work.
     </p>
     <figure class="fig">
       <canvas id="c-boxes" height="360" aria-label="The six reservoirs of ANEMONE"></canvas>
-      <figcaption>The full structure. Ventilation times are prescribed, not derived — see section 14.</figcaption>
+      <figcaption>The full structure. Ventilation times are prescribed rather than derived, which section 17 comes back to.</figcaption>
     </figure>
     <p class="aside">
-      Note what this does to the answer at 100 years: it goes <em>up</em>, from
-      18% to 44%. Slowing the ocean down keeps more carbon in the air on human
-      timescales, even though the thousand-year answer barely moves.
+      Notice what this does to the hundred-year answer. It goes <em>up</em>,
+      from 18% to 44%. Slowing the ocean down leaves more carbon in the air on
+      human timescales, even though the thousand-year answer barely shifts.
     </p>
   </div>
 </section>
 
 <section class="sec" id="s9">
   <div class="wrap narrow">
-    <p class="secnum">09 — Stage four</p>
+    <p class="secnum">09 · Stage four</p>
     <h2>The seafloor answers</h2>
     <p>
-      Acidify the deep ocean and it starts to dissolve its own floor. The
-      seabed holds a reactive layer of calcium carbonate — shells, mostly — and
-      when the water above becomes corrosive enough, that carbonate goes into
-      solution and hands back the alkalinity the incoming CO₂ consumed.
+      Acidify the deep ocean and it starts dissolving its own floor. The seabed
+      holds a reactive layer of calcium carbonate, mostly the shells of things
+      that died and sank, and when the water above turns corrosive enough that
+      carbonate goes back into solution, handing back the
+      <span class="term" data-term="alkalinity">alkalinity</span> the incoming
+      CO₂ consumed.<a class="ref" href="#ref-1">1</a>
     </p>
     <p>
       This is the ocean partially repairing its own buffer. It takes thousands
-      of years, and it pulls the airborne fraction down to about 8% at a
-      hundred thousand years — but it cannot finish the job, because it is
-      only redistributing carbonate that was already in the ocean system.
+      of years and it pulls the airborne fraction down to roughly 8% at a
+      hundred thousand years, but it can never finish the job, because all it
+      does is redistribute carbonate that was already in the ocean system.
     </p>
     <div class="eq">
       <div class="eq-math">F<sub>diss</sub> = k<sub>sed</sub> · M<sub>sed</sub> · (1 − Ω)<sup>n</sup></div>
       <ul class="eq-gloss">
-        <li><b>Ω</b> — how saturated the deep water is; below 1 it dissolves carbonate</li>
-        <li><b>M<sub>sed</sub></b> — the reactive carbonate available on the seafloor</li>
+        <li><b>Ω</b> · the <span class="term" data-term="omega">saturation state</span> of the deep water; below 1 it dissolves carbonate</li>
+        <li><b>M<sub>sed</sub></b> · reactive carbonate available on the seafloor</li>
         <li>The further below saturation, the faster it dissolves</li>
       </ul>
     </div>
@@ -418,91 +439,301 @@
 
 <section class="sec alt" id="s10">
   <div class="wrap narrow">
-    <p class="secnum">10 — Stage five</p>
+    <p class="secnum">10 · Stage five</p>
     <h2>The thermostat</h2>
     <p>
-      The last process is the slowest and the strangest: rock. CO₂ dissolved in
-      rainwater attacks silicate minerals on land, and the products wash to the
-      sea where they are eventually buried as carbonate. Carbon leaves the
-      ocean–atmosphere system entirely and becomes rock again.
+      The last process is the slowest and the strangest of them: rock. CO₂
+      dissolved in rainwater attacks silicate minerals on land, and the
+      products wash down to the sea where they are eventually buried as
+      carbonate. Carbon leaves the ocean and atmosphere altogether and becomes
+      rock again.
     </p>
     <p>
-      What makes it a <em>thermostat</em> is that the reaction runs faster when
-      the planet is warmer and when there is more CO₂ to dissolve. Push CO₂ up
-      and weathering speeds up, drawing it back down. Let CO₂ fall and
-      weathering slows, letting volcanoes refill the air.
+      What makes this a thermostat is that the reaction runs faster when the
+      planet is warmer and when there is more CO₂ around to dissolve. Push CO₂
+      up and
+      <span class="term" data-term="weathering">weathering</span> speeds up,
+      drawing it back down. Let CO₂ fall and weathering slows, letting
+      volcanoes refill the air.
+    </p>
+    <p>
+      That second half matters as much as the first, and it is easy to skip
+      past. Weathering is only one arm of the loop. The other is
+      <span class="term" data-term="outgassing">volcanic outgassing</span>,
+      which returns carbon from the crust to the atmosphere at a rate that does
+      not care what the climate is doing. A one-way sink would strip the air
+      bare; a one-way source would cook the planet. It is the pairing of a
+      constant source with a temperature-sensitive sink that makes a
+      thermostat, in exactly the way a house needs both a furnace running flat
+      out and a valve that responds to the room.
     </p>
     <div class="eq">
       <div class="eq-math">F<sub>sil</sub> = F<sub>sil,0</sub> · (pCO₂/pCO₂<sub>0</sub>)<sup>0.3</sup> · e<sup>ΔT/12</sup></div>
       <ul class="eq-gloss">
-        <li>More CO₂ in the air ⇒ faster weathering</li>
-        <li>Warmer ⇒ faster weathering (about an e-folding per 12 K)</li>
-        <li>Both terms push the planet back toward where volcanoes and weathering balance</li>
+        <li>More CO₂ in the air gives faster weathering</li>
+        <li>Warmer gives faster weathering, roughly an e-folding per 12 K</li>
+        <li>Both terms push the planet back toward the point where volcanoes and weathering balance</li>
       </ul>
     </div>
     <p class="callout">
-      Left alone, the model settles at <b>279.99 ppm</b> — not because anyone
-      set it there, but because that is the CO₂ level where silicate weathering
-      exactly consumes what volcanoes emit. The thermostat finds its own
-      setpoint.
+      Left alone, the model settles at <b>279.99 ppm</b>. Nobody set it there.
+      That is simply the CO₂ level at which silicate weathering consumes
+      exactly what volcanoes emit, and the thermostat finds its own setpoint.
     </p>
   </div>
 </section>
 
+<!-- ===================== 11. THE SLOW BUDGET ===================== -->
+<section class="sec" id="s11">
+  <div class="wrap">
+    <p class="secnum">11 · The slow budget</p>
+    <h2>What the thermostat actually costs</h2>
+    <div class="narrow">
+      <p>
+        A feedback is not interesting until you know how strong it is. The
+        previous section described a loop; this one puts the numbers on it, and
+        the numbers are the reason the loop matters over millions of years and
+        not over centuries.
+      </p>
+      <p>
+        Here is the entire geological budget of the model, in and out of the
+        surface system, meaning the atmosphere and ocean taken together. Every
+        figure is the model's own calibrated steady state.
+      </p>
+
+      <table class="budget">
+        <thead>
+          <tr>
+            <th>Flux</th>
+            <th class="n">GtC/yr</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="src">
+            <td class="what">Volcanic outgassing
+              <span class="gloss">Carbon out of the crust. Does not respond to climate.</span></td>
+            <td class="n">+<b id="gb-volc">·</b></td>
+          </tr>
+          <tr class="wash">
+            <td class="what"><span class="term" data-term="carbonate-weathering">Carbonate weathering</span>
+              <span class="gloss">Carbon dissolved out of limestone and carried to the sea.</span></td>
+            <td class="n">+<b id="gb-carb">·</b></td>
+          </tr>
+          <tr class="sink">
+            <td class="what">Carbonate burial
+              <span class="gloss">Carbon locked back into rock on the seafloor.</span></td>
+            <td class="n">−<b id="gb-bur">·</b></td>
+          </tr>
+          <tr class="total">
+            <td class="what">Net</td>
+            <td class="n">0.000</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Something is missing from that table, and its absence is the whole
+        point: <b>silicate weathering does not appear in it.</b> Silicate rock
+        contains no carbon, so weathering it adds none to the sea. What it
+        delivers instead is
+        <span class="term" data-term="alkalinity">alkalinity</span>, and
+        alkalinity is what forces carbon to precipitate. The reason burial
+        (<b id="gb-bur2">·</b>) exceeds what carbonate weathering supplied
+        (<b id="gb-carb2">·</b>) is precisely the
+        <b id="gb-sil">·</b> GtC/yr of burial that silicate weathering paid
+        for out of the atmosphere.
+      </p>
+      <p>
+        That is the difference between the two weatherings, and it is worth
+        being slow about, because it is the thing most often gotten backwards.
+        Follow one atom of calcium through each path:
+      </p>
+    </div>
+
+    <div class="narrow">
+      <div class="eq">
+        <p class="eq-title">The carbonate path</p>
+        <div class="eq-math"><span class="eq-step">on land</span>CaCO₃ + CO₂ + H₂O → Ca²⁺ + 2HCO₃⁻</div>
+        <div class="eq-math"><span class="eq-step">at sea</span>Ca²⁺ + 2HCO₃⁻ → CaCO₃ + CO₂ + H₂O</div>
+        <ul class="eq-gloss">
+          <li>Takes <b>1</b> CO₂ from the air, and one carbon out of the limestone</li>
+          <li>Buries <b>1</b> carbon, and hands the CO₂ straight back</li>
+          <li>Net effect on the air over a full circuit · <b>zero</b>. A round trip, not a sink.</li>
+        </ul>
+      </div>
+      <div class="eq">
+        <p class="eq-title">The silicate path</p>
+        <div class="eq-math"><span class="eq-step">on land</span>CaSiO₃ + 2CO₂ + H₂O → Ca²⁺ + 2HCO₃⁻ + SiO₂</div>
+        <div class="eq-math"><span class="eq-step">at sea</span>Ca²⁺ + 2HCO₃⁻ → CaCO₃ + CO₂ + H₂O</div>
+        <ul class="eq-gloss">
+          <li>Takes <b>2</b> CO₂ from the air, and nothing from the rock — silicate has no carbon in it</li>
+          <li>Buries <b>1</b> carbon, and hands <b>1</b> CO₂ back</li>
+          <li>Net effect on the air · <b>one CO₂ removed, permanently</b></li>
+        </ul>
+      </div>
+      <p>
+        Notice that the second line is identical in both. The burial step does
+        not know or care which rock the calcium came from; the entire
+        difference between a sink and a round trip is made on land, in how much
+        CO₂ the first line had to spend to free that calcium.
+      </p>
+      <p>
+        So the only true geological sink in the model is silicate weathering,
+        and in steady state it must equal the volcanic source exactly. The
+        model does not discover this; it imposes it, in one line, when it
+        calibrates: <b>F<sub>sil,0</sub> = F<sub>volc</sub></b>. That single
+        identity is what gives the thermostat a setpoint to find.
+      </p>
+      <p class="callout">
+        Divide the surface system's entire carbon inventory,
+        <b id="gb-inv">·</b> GtC of atmosphere plus ocean, by that
+        <b id="gb-sil2">·</b> GtC/yr, and you get a turnover time of about
+        <b id="gb-turn">·</b> years. That is how long it takes to cycle every
+        carbon atom in the air and the sea through rock, and it is why the
+        charts in the next sections run to a million years rather than
+        stopping at a thousand.
+      </p>
+    </div>
+
+    <div class="lab wide" data-lab="thermostat">
+      <div class="lab-head">
+        <h3>The restoring force, live</h3>
+        <p>
+          Weathering against outgassing. Where the curve crosses the flat line,
+          the planet is in balance — drag away from it and read what pulls it
+          back.
+        </p>
+      </div>
+      <div class="lab-body split">
+        <div class="thermo-viz">
+          <canvas id="c-thermostat" height="300" aria-label="Silicate weathering flux against constant volcanic outgassing"></canvas>
+        </div>
+        <div class="controls">
+          <label>
+            <span class="lbl">Atmospheric CO₂</span>
+            <span class="val"><output id="o-tco2">280</output> <i>ppm</i></span>
+            <input type="range" id="r-tco2" min="0" max="1000" step="1" value="344">
+          </label>
+          <label>
+            <span class="lbl">Weathering exponent n</span>
+            <span class="val"><output id="o-tn">0.30</output> <i>the loose one</i></span>
+            <input type="range" id="r-tn" min="0.10" max="0.50" step="0.01" value="0.30">
+          </label>
+          <div class="readout">
+            <div><span>Silicate weathering</span><b id="v-tsil">·</b><i>GtC/yr</i></div>
+            <div><span>Warming</span><b id="v-tdt">·</b><i>K above preindustrial</i></div>
+            <div class="hi"><span>Imbalance</span><b id="v-timb">·</b><i>GtC/yr to the air</i></div>
+            <div><span>Time to work it off</span><b id="v-ttime">·</b><i>order of magnitude</i></div>
+          </div>
+          <button class="btn small" id="b-tpreind">Back to 280 ppm</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="narrow">
+      <p>
+        Two things are worth doing with that panel. The first is to drag CO₂
+        far to the right and watch the imbalance grow: the thermostat pushes
+        harder the further you shove it, which is what makes the setpoint
+        stable rather than merely a place the system happens to sit. The
+        second is to drag CO₂ <em>below</em> 280 and watch the imbalance
+        reverse. Weathering falls behind the volcanoes and the air refills.
+        The thermostat has two directions, and the recovery from a Snowball
+        Earth runs on the second one.
+      </p>
+      <p>
+        The exponent slider is there because that number is not well known.
+        Move it from 0.1 to 0.5 and watch what does and does not change. The
+        setpoint does not move at all, not even slightly: at 280 ppm the
+        ratio pCO₂/pCO₂<sub>0</sub> is exactly 1, and 1 raised to any power
+        is still 1, so the crossing sits where the steady-state identity puts
+        it no matter what the exponent is. What the exponent changes is the
+        <em>slope</em> through that crossing, and with it the restoring time,
+        which more than doubles across the range.
+      </p>
+      <p>
+        That split is the honest state of the field, and it is why the
+        equation is worth trusting further than its own coefficients. The
+        <em>existence</em> of the feedback follows from bookkeeping that has
+        to balance. Its <em>strength</em> is an empirical question that is
+        still open, which is what section 17 returns to.
+      </p>
+      <p class="callout warn">
+        Now the number that should stop you. Silicate weathering removes
+        <b id="gb-sil3">·</b> GtC/yr. Fossil fuel and cement emissions in
+        <b id="gb-year">·</b> were <b id="gb-emis">·</b> GtC/yr — about
+        <b id="gb-ratio">·</b> times faster. The thermostat is real, it works,
+        and it is running roughly two orders of magnitude too slowly to be of
+        any use to anyone now alive.
+      </p>
+      <p class="aside">
+        Which is also why stage five is the only stage that ever finishes.
+        Stage four hands back alkalinity from the seafloor and stalls with
+        <b id="gb-af4">·</b> of the pulse still airborne, forever, because it
+        is only rearranging carbonate the ocean already had. Stage five is the
+        one process that takes carbon out of the system altogether, and it
+        drives the airborne fraction to <b id="gb-af5">·</b> — but it needs
+        400,000 years to do it.
+      </p>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== 11. WHAK ===================== -->
-<section class="sec paper" id="s11">
+<section class="sec paper" id="s12">
   <div class="wrap narrow">
-    <p class="secnum">11 — The licence</p>
+    <p class="secnum">12 · The licence</p>
     <h2>Why we are allowed to assume that</h2>
     <div class="citation">
       <p class="cite-authors">Walker, Hays &amp; Kasting</p>
       <p class="cite-title">A negative feedback mechanism for the long-term stabilization of Earth's surface temperature</p>
-      <p class="cite-where">Journal of Geophysical Research 86, 9776–9782 · 1981</p>
+      <p class="cite-where">Journal of Geophysical Research 86, 9776–9782 · 1981 <a class="ref" href="#ref-4">4</a></p>
     </div>
     <p>
-      Every term in the previous section is an assumption, and assumptions in
-      a model need a source. This is the source — known universally as WHAK,
-      after its authors.
+      Every term in the weathering law of section 10 is an assumption, and
+      assumptions in a model need a source. This is the source, known
+      universally as WHAK after its three authors.
     </p>
     <p>
-      The problem it solved was the <em>faint young Sun</em>. The Sun was about
-      30% dimmer early in Earth's history, which should have left the planet
-      frozen solid. It was not: there is liquid water in the rock record
+      The problem it solved was the faint young Sun. Early in Earth's history
+      the Sun was about 30% dimmer, which should have left the planet frozen
+      solid. It was not frozen: there is liquid water in the rock record
       throughout. Something held the temperature up while the Sun brightened,
-      and kept holding it as conditions changed.
+      and kept holding it as conditions changed underneath.
     </p>
     <p>
-      WHAK's answer was that the silicate weathering feedback does it
-      automatically. No biology required, no coincidence required. The
-      dependence of weathering on CO₂ and temperature — the exponents in the
-      equation above — is what makes Earth's climate self-correcting on
-      million-year timescales.
+      WHAK's answer was that the silicate weathering feedback does this
+      automatically, with no biology required and no coincidence required. The
+      way weathering responds to CO₂ and to temperature, which is to say the
+      exponents in the law two sections back, is what makes Earth's climate
+      self-correcting over millions of years.
     </p>
     <p class="aside">
-      This is what "standing on the shoulders" actually looks like in
-      practice. Stage 5 is four lines of code. Those four lines are licensed by
-      forty years of work testing whether the feedback is real, and the honest
-      caveat is that its exponents remain <em>poorly constrained</em> — which
-      is why section 14 shows a band rather than a line.
+      This is what standing on the shoulders of others looks like in practice.
+      Stage 5 is four lines of code. Those four lines are licensed by forty
+      years of work testing whether the feedback is real, and the honest
+      caveat is that its exponents remain poorly constrained, which is why
+      section 17 asks for a band rather than a line.
     </p>
   </div>
 </section>
 
 <!-- ===================== 12. THE RESULT ===================== -->
-<section class="sec" id="s12">
+<section class="sec" id="s13">
   <div class="wrap">
-    <p class="secnum">12 — The result</p>
+    <p class="secnum">13 · The result</p>
     <h2>Five stages, five answers</h2>
     <div class="narrow">
       <p>
-        Here is every stage on one plot: the fraction of a 1,000 GtC pulse
-        still in the atmosphere, against time, from one year to a million.
-        Time is on a logarithmic axis because that is the only way five
-        distinct timescales fit on one page.
+        Here is every stage on one plot: the
+        <span class="term" data-term="airborne-fraction">airborne
+        fraction</span> of a 1,000 GtC pulse against time, from one year out to
+        a million. Time runs on a logarithmic axis, which is the only way to
+        fit five distinct timescales onto one page.
       </p>
       <p>
-        Toggle the stages on. Each one adds a single process, and each one
-        changes the answer somewhere different along the axis.
+        Toggle the stages on and off. Each one adds a single process, and each
+        one changes the answer somewhere different along the axis.
       </p>
     </div>
     <div class="lab wide" data-lab="stages">
@@ -514,34 +745,35 @@
     <div class="narrow">
       <p class="callout">
         There is no single number here. The decay is a sum of exponentials
-        spanning five orders of magnitude in time, so "the lifetime of CO₂" is
-        not a fact about the world — it is a choice about which timescale you
-        care about. The IPCC's own impulse response function contains a
-        constant term with <b>no time constant attached to it at all</b>:
-        21.7% of a pulse that simply never decays. This model is what that
-        21.7% turns out to be.
+        spanning five orders of magnitude in time, so "the lifetime of CO₂"
+        describes a choice about which timescale you care about rather than a
+        fact about the world. The
+        <span class="term" data-term="irf">impulse response function</span>
+        used by the IPCC contains a constant term with <b>no time constant
+        attached to it at all</b>, 21.7% of a pulse that simply never
+        decays.<a class="ref" href="#ref-3">3</a> This model is an attempt to
+        say what that 21.7% really is.
       </p>
     </div>
   </div>
 </section>
 
 <!-- ===================== 13. THE SLIDER ===================== -->
-<section class="sec alt" id="s13">
+<section class="sec alt" id="s14">
   <div class="wrap">
-    <p class="secnum">13 — The twist</p>
+    <p class="secnum">14 · The twist</p>
     <h2>The ocean gets worse at its job</h2>
     <div class="narrow">
       <p>
-        One last thing, and it is the one people find hardest to believe.
-        Everything so far described <em>fractions</em> — as if the ocean took a
-        fixed share. It does not. Emit twice as much and the ocean does not
-        take twice as much; it takes a smaller <em>share</em> of a bigger
-        number.
+        One last thing, and it is the part people find hardest to believe.
+        Everything so far has been described in fractions, as though the ocean
+        took a fixed share. It does not work that way. Emit twice as much and
+        the ocean takes a smaller share of a bigger number.
       </p>
       <p>
-        You already know why. The Revelle factor climbs as carbon goes in. Each
-        molecule absorbed eats a carbonate ion and makes the next one harder.
-        Drag the slider.
+        You already know why. The Revelle factor climbs as carbon goes in.
+        Every molecule absorbed eats a carbonate ion and makes the next one
+        harder to absorb. Drag the slider.
       </p>
     </div>
     <div class="lab wide" data-lab="pulse">
@@ -554,109 +786,303 @@
             <input type="range" id="r-pulse" min="0" max="3" step="1" value="1">
           </label>
           <div class="readout inline">
-            <div><span>after 100 yr</span><b id="v-af100">—</b></div>
-            <div><span>after 1,000 yr</span><b id="v-af1k">—</b></div>
-            <div><span>after 400,000 yr</span><b id="v-af400k">—</b></div>
+            <div><span>after 100 yr</span><b id="v-af100">·</b></div>
+            <div><span>after 1,000 yr</span><b id="v-af1k">·</b></div>
+            <div><span>after 400,000 yr</span><b id="v-af400k">·</b></div>
           </div>
         </div>
       </div>
     </div>
     <div class="narrow">
       <p class="aside">
-        For scale: cumulative human emissions to date are roughly 700 GtC.
-        Every curve here is a separate run of the full model, not an
-        interpolation of one.
+        For scale, cumulative human emissions so far come to roughly 700
+        <span class="term" data-term="gtc">GtC</span>. Every curve here is a
+        separate run of the full model rather than an interpolation of one.
       </p>
     </div>
   </div>
 </section>
 
-<!-- ===================== 14. LIMITS ===================== -->
-<section class="sec" id="s14">
+<!-- ===================== 14. HISTORICAL ===================== -->
+<section class="sec" id="s15">
   <div class="wrap">
-    <p class="secnum">14 — Honesty</p>
-    <h2>What this model gets wrong</h2>
+    <p class="secnum">15 · The confrontation</p>
+    <h2>Does any of this match the real world?</h2>
     <div class="narrow">
       <p>
-        A model you cannot criticise is not a model, it is a claim. These are
-        the places where ANEMONE is known to be wrong, in roughly the order
-        they would change an answer you care about.
+        Everything so far has been an idealised pulse dropped into a
+        preindustrial ocean. Reality ran a different experiment, and we have
+        the records. So take the actual fossil-fuel and cement emissions from
+        1750 onward,<a class="ref" href="#ref-11">11</a> feed them into the
+        model, and see where the atmosphere ends up.
+      </p>
+      <p>
+        Nothing in the model was fitted to the curve below. The parameters were
+        all set from section 4 and never touched again.
+      </p>
+    </div>
+    <div class="lab wide" data-lab="historical">
+      <div class="lab-body">
+        <canvas id="c-hist" height="470" aria-label="Modelled versus observed atmospheric CO2 since 1850"></canvas>
+        <div class="legend" id="histLegend"></div>
+      </div>
+    </div>
+    <div class="narrow">
+      <div class="scorecard" id="histScore"></div>
+      <p>
+        The observations come from two sources spliced together: Law Dome ice
+        cores up to 1958,<a class="ref" href="#ref-12">12</a> then direct
+        measurement at Mauna Loa.<a class="ref" href="#ref-13">13</a> The
+        temperature record is HadCRUT5.<a class="ref" href="#ref-14">14</a> The ocean
+        side of the model has its own check against the Hawaii Ocean Time-series
+        at Station ALOHA:<a class="ref" href="#ref-15">15</a> over 1988 to 2024 the
+        model acidifies at 2.0 × 10⁻³ pH units per year against 1.9 × 10⁻³
+        observed.
+      </p>
+      <p>
+        The model lands a few ppm low, and there is a reason for it that was
+        decided in advance. ANEMONE has no land biosphere, so emissions from
+        deforestation and land-use change are left out of the forcing. Those
+        come to roughly 200 GtC historically, and they very nearly cancel
+        against the carbon the land has taken back up over the same period.
+        Comparing fossil-only emissions against an atmosphere-plus-ocean model
+        is the like-for-like test.
+      </p>
+      <p class="aside">
+        The warming envelope is wider than the CO₂ envelope on purpose. It
+        spans the IPCC AR6 likely range for
+        <span class="term" data-term="ecs">climate sensitivity</span>, 2.5 to 4.0 K per doubling,<a class="ref" href="#ref-18">18</a> because how much
+        warming you get per unit of CO₂ is much less certain than where the CO₂
+        goes. The model warms instantly, with no ocean thermal lag, so it
+        should sit above the observed transient during a ramp-up. It does, and
+        the observations track the lower edge.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 15. RADIOCARBON ===================== -->
+<section class="sec alt" id="s16">
+  <div class="wrap">
+    <p class="secnum">16 · The independent test</p>
+    <h2>The tracer nobody meant to release</h2>
+    <div class="narrow">
+      <p>
+        Matching CO₂ is a weaker test than it looks. The ventilation rates in
+        section 8 were tuned against the observed impulse
+        response,<a class="ref" href="#ref-3">3</a> so getting the airborne
+        fraction right is partly circular. A model earns trust by predicting
+        something it was never shown.
+      </p>
+      <p>
+        Atmospheric nuclear testing provides exactly that. Bomb tests through
+        the 1950s and early 60s nearly doubled the amount of
+        <span class="term" data-term="radiocarbon">radiocarbon</span> in the
+        air,<a class="ref" href="#ref-17">17</a> a global tracer-release experiment
+        nobody would have been allowed to run on purpose. Watching where that spike went, and how fast, tests
+        the ocean mixing directly.
+      </p>
+    </div>
+    <div class="lab wide" data-lab="c14">
+      <div class="lab-body">
+        <canvas id="c-c14" height="470" aria-label="Bomb radiocarbon in the atmosphere and ocean"></canvas>
+        <div class="legend" id="c14Legend"></div>
+      </div>
+    </div>
+    <div class="narrow">
+      <p>
+        Two separate things get tested here, and the model passes one of them.
+      </p>
+      <p>
+        <b>The decadal air-sea exchange holds up.</b> From the 1965 peak
+        onward, the modelled decline tracks the
+        observations<a class="ref" href="#ref-16">16</a> closely. The peak
+        itself overshoots, for reasons that were known before the run: a
+        one-box atmosphere has no stratosphere to delay the tropospheric peak,
+        and no land biosphere, which took up something like a quarter of the
+        bomb carbon.
+      </p>
+      <p>
+        <b>The deep ocean comes out too young.</b> The preindustrial
+        radiocarbon gradients are predictions, never inputs, so they are a
+        clean test. Here is what the model says against what the ocean says.
+      </p>
+      <div class="scorecard" id="c14Score"></div>
+      <p>
+        The deep box is roughly 40‰ too young. Tuned to reproduce the
+        century-scale airborne fraction, this ventilation scheme cannot also
+        reproduce the radiocarbon age of the deep ocean. Two timescales are not
+        enough to stand in for the real ocean's continuum of them.
+      </p>
+      <p class="callout warn">
+        This is what a genuine validation result looks like. The summary is that the model is
+        correct for the timescale it was calibrated for, and too vigorous for
+        the millennial deep ocean, and you should trust its century-scale
+        answers more than its ten-thousand-year ones.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 16. LIMITS ===================== -->
+<section class="sec" id="s17">
+  <div class="wrap">
+    <p class="secnum">17 · Honesty</p>
+    <h2>What this model gets wrong</h2>
+    <div class="narrow">
+      <p class="quote">
+        “All models are wrong, but some are useful.”
+        <span>George Box <a class="ref" href="#ref-19">19</a></span>
+      </p>
+      <p>
+        Box was writing about statistics, and the line has been worn smooth by
+        repetition, but it earns its keep here. A model you cannot criticise has stopped
+        being a model and become a sales pitch. So these are the places where ANEMONE
+        is known to be wrong, roughly in the order they would change an answer
+        you actually care about.
       </p>
     </div>
     <div class="limits">
       <div class="limit">
-        <h3>Ventilation is imposed, not derived</h3>
-        <p>The rates at which water moves between ocean layers were tuned to match the observed impulse response. A box model cannot derive them from physics — there is no fluid dynamics in it.</p>
+        <h3>Ventilation is imposed</h3>
+        <p>The rates at which water moves between ocean layers were tuned to match the observed impulse response. There is no fluid dynamics in a box model, so it cannot derive them.</p>
       </div>
       <div class="limit">
         <h3>Two mixing timescales, not a spectrum</h3>
-        <p>The real ocean ventilates across a continuum of timescales. Three boxes give two. This is most of the residual mismatch at a century.</p>
+        <p>The real ocean ventilates across a continuum. Three boxes give two timescales. Section 15 shows what that costs.</p>
       </div>
       <div class="limit">
         <h3>No land biosphere, no permafrost</h3>
-        <p>Both matter for the first century specifically — exactly the period most people are asking about.</p>
+        <p>Both matter most in the first century, which is exactly the period most people are asking about.</p>
       </div>
       <div class="limit">
         <h3>Warming is instantaneous</h3>
-        <p>The model applies equilibrium climate sensitivity with no ocean thermal inertia. Fine for the weathering feedback; wrong if you want the zero-emissions commitment.</p>
+        <p>Equilibrium climate sensitivity is applied with no ocean thermal inertia. Adequate for the weathering feedback, wrong for anything about committed warming.</p>
       </div>
       <div class="limit">
-        <h3>Weathering exponents are loosely constrained</h3>
-        <p>Sweeping the silicate exponent across its plausible range visibly moves the 400,000-year tail. The honest presentation is a band, not a line.</p>
+        <h3>Weathering exponents are loose</h3>
+        <p>Sweeping the silicate exponent across its plausible range visibly moves the 400,000-year tail. An honest presentation shows a band.</p>
       </div>
       <div class="limit">
-        <h3>Radiocarbon says the deep ocean is too young</h3>
-        <p>Tuned to the century-scale airborne fraction, the model's deep water comes out about 40‰ too young in radiocarbon. Correct for the timescale it was tuned for, too vigorous for the millennial deep ocean.</p>
+        <h3>Sediment inventory is approximated</h3>
+        <p>CaCO₃ compensation depends on an assumed reactive sediment inventory of about 1,560 GtC. Full sediment models do real work that this approximates away.<a class="ref" href="#ref-2">2</a></p>
       </div>
     </div>
     <div class="narrow">
       <p class="callout warn">
-        One thing this result does <em>not</em> mean. CO₂ persisting for
-        millennia does not imply warming keeps increasing for millennia. If
-        emissions stopped, temperature would stay roughly flat rather than
-        continue climbing, because falling CO₂ approximately cancels the lag
-        from ocean thermal inertia. Long CO₂ lifetime and continued warming are
-        different claims, and conflating them is the most common error made
-        about this science.
+        One thing this result does not mean. CO₂ lingering for millennia does
+        not imply that warming keeps climbing for millennia. If emissions
+        stopped, temperature would stay roughly flat rather than continue
+        rising, because falling CO₂ roughly cancels the lag from ocean thermal
+        inertia. Long CO₂ lifetime and continued warming are separate claims,
+        and running them together is the most common mistake made about this
+        science.
       </p>
     </div>
   </div>
 </section>
 
-<!-- ===================== SOURCES ===================== -->
-<section class="sec alt" id="sources">
+<!-- ===================== 18. THE ANSWER ===================== -->
+<section class="sec alt" id="s18">
   <div class="wrap">
-    <p class="secnum">Sources</p>
-    <h2>Where this comes from</h2>
-    <div class="srcgrid">
-      <div>
-        <h3>The model</h3>
-        <ul class="srclist">
-          <li>Archer, D. (2005) <i>J. Geophys. Res.</i> <b>110</b>, C09S05 — the long tail</li>
-          <li>Archer, D. et al. (2009) <i>Annu. Rev. Earth Planet. Sci.</i> <b>37</b>, 117–134</li>
-          <li>Joos, F. et al. (2013) <i>Atmos. Chem. Phys.</i> <b>13</b>, 2793–2825 — the impulse response</li>
-          <li>Walker, Hays &amp; Kasting (1981) <i>J. Geophys. Res.</i> <b>86</b>, 9776–9782 — WHAK</li>
-        </ul>
-      </div>
-      <div>
-        <h3>The chemistry</h3>
-        <ul class="srclist">
-          <li>Weiss, R. (1974) <i>Mar. Chem.</i> <b>2</b>, 203–215 — CO₂ solubility</li>
-          <li>Lueker, Dickson &amp; Keeling (2000) <i>Mar. Chem.</i> <b>70</b>, 105–119 — K₁, K₂</li>
-          <li>Dickson, A. (1990) <i>Deep-Sea Res.</i> <b>37</b>, 755–766 — boric acid</li>
-          <li>Millero, F. (1995) <i>GCA</i> <b>59</b>, 661–677 — water, pressure corrections</li>
-          <li>Mucci, A. (1983) <i>Am. J. Sci.</i> <b>283</b>, 780–799 — calcite solubility</li>
-        </ul>
-      </div>
-    </div>
+    <p class="secnum">18 · The answer</p>
+    <h2>How long until it is gone</h2>
     <div class="narrow">
-      <p class="aside">
-        Every curve on this page was generated by running the model itself; the
-        carbonate chemistry panel in section 5 runs the same equilibrium
-        constants live in your browser, checked against the original to twelve
-        decimal places.
+      <p>
+        Which brings us back to the question this page opened with. Here is
+        the model's answer for a 1,000 GtC pulse, about what another
+        half-century of business as usual would add on top of what has already
+        been emitted. It is the same stage-five curve from section 13, read a
+        different way: not <em>how much is left at time t</em>, but
+        <em>how long until a given fraction has gone</em>.
       </p>
     </div>
+
+    <div class="lab wide" data-lab="answer">
+      <div class="lab-body split">
+        <div>
+          <canvas id="c-answer" height="330" aria-label="Time taken for successive fractions of a carbon pulse to leave the atmosphere"></canvas>
+        </div>
+        <div class="readout" id="answerSteps"></div>
+      </div>
+    </div>
+
+    <div class="narrow">
+      <p>
+        Read down that column. Every step takes five to ten times longer than
+        the step before it, and the pattern holds all the way down. There is no point where
+        the curve turns and finishes — it only gets flatter, because each
+        process that takes over from the last is slower than it was and has
+        less left to work on.
+      </p>
+      <p>
+        This is the hidden assumption in the question, and it is why methane
+        is not a useful analogy. Methane has a lifetime because methane has
+        one destruction process. Carbon dioxide has five, spread across five
+        orders of magnitude in time, and any single number that summarises
+        them has thrown away the thing you wanted to know.
+      </p>
+      <p>
+        What we emit decides which end of that staircase we stand on. Between
+        the smallest and largest pulses the model was run with, a factor of
+        ten in emitted carbon, the fraction still airborne after a century
+        moves from <b id="ans-lo100">·</b> to <b id="ans-hi100">·</b>. After
+        400,000 years it moves from <b id="ans-lo400k">·</b> to
+        <b id="ans-hi400k">·</b>, which is to say it does not move at all. The
+        far end is fixed, because silicate weathering does not care how much
+        carbon it has to remove, only how fast it can remove it. The near end
+        is not fixed, and the near end is the part measured in centuries.
+      </p>
+      <p class="aside">
+        None of which tells anyone what to do about it, and the model has no
+        opinion to offer. Read it alongside the caveat that closes section 17:
+        carbon staying up for millennia is not the same claim as temperature
+        climbing for millennia. All this model does is say how long the carbon
+        stays, and say it in a shape that no single number can hold.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REFERENCES ===================== -->
+<section class="sec" id="sources">
+  <div class="wrap">
+    <p class="secnum">References</p>
+    <h2>Where this comes from</h2>
+    <div class="narrow">
+      <p class="hint-p">
+        Numbers in the text link here. Every curve on this page was generated by
+        running the model itself, and the carbonate chemistry in section 5 runs
+        the same published equilibrium constants live in your browser.
+      </p>
+      <p class="repo">
+        <a class="link" href="https://github.com/nems808/ANEMONE" target="_blank" rel="noopener">
+          github.com/nems808/ANEMONE
+        </a>
+        <span>the model, the data, and the scripts that made every figure here</span>
+      </p>
+    </div>
+    <ol class="reflist">
+      <li id="ref-1">Archer, D. (2005) "Fate of fossil fuel CO<sub>2</sub> in geologic time". <i>J. Geophys. Res.</i> <b>110</b>, C09S05.</li>
+      <li id="ref-2">Archer, D. et al. (2009) "Atmospheric lifetime of fossil fuel carbon dioxide". <i>Annu. Rev. Earth Planet. Sci.</i> <b>37</b>, 117–134.</li>
+      <li id="ref-3">Joos, F. et al. (2013) "Carbon dioxide and climate impulse response functions for the computation of greenhouse gas metrics: a multi-model analysis". <i>Atmos. Chem. Phys.</i> <b>13</b>, 2793–2825.</li>
+      <li id="ref-4">Walker, J. C. G., Hays, P. B. &amp; Kasting, J. F. (1981) "A negative feedback mechanism for the long-term stabilization of Earth's surface temperature". <i>J. Geophys. Res.</i> <b>86</b>, 9776–9782.</li>
+      <li id="ref-5">Weiss, R. F. (1974) <i>Mar. Chem.</i> <b>2</b>, 203–215. CO₂ solubility in seawater.</li>
+      <li id="ref-6">Lueker, T. J., Dickson, A. G. &amp; Keeling, C. D. (2000) <i>Mar. Chem.</i> <b>70</b>, 105–119. Carbonic acid dissociation constants K₁ and K₂.</li>
+      <li id="ref-7">Dickson, A. G. (1990) <i>Deep-Sea Res.</i> <b>37</b>, 755–766. Boric acid dissociation.</li>
+      <li id="ref-8">Millero, F. J. (1995) <i>Geochim. Cosmochim. Acta</i> <b>59</b>, 661–677. Water dissociation and pressure corrections.</li>
+      <li id="ref-9">Mucci, A. (1983) <i>Am. J. Sci.</i> <b>283</b>, 780–799. Calcite solubility.</li>
+      <li id="ref-10">Uppström, L. R. (1974) "The boron/chlorinity ratio of deep-sea water from the Pacific Ocean". <i>Deep-Sea Res.</i> <b>21</b>(2), 161–162. Total boron in seawater.</li>
+      <li id="ref-11">Friedlingstein, P. et al. (2025) "Global Carbon Budget 2024". <i>Earth Syst. Sci. Data</i> <b>17</b>, 965–1039. Fossil fuel and cement emissions, retrieved via Our World in Data.</li>
+      <li id="ref-12">MacFarling Meure, C. et al. (2006) "Law Dome CO<sub>2</sub>, CH<sub>4</sub> and N<sub>2</sub>O ice core records extended to 2000 years BP". <i>Geophys. Res. Lett.</i> <b>33</b>, L14810.</li>
+      <li id="ref-13">Keeling, C. D. and NOAA Global Monitoring Laboratory. Mauna Loa atmospheric CO₂ record.</li>
+      <li id="ref-14">Morice, C. P. et al. (2021) "An updated assessment of near-surface temperature change from 1850: the HadCRUT5 data set". <i>J. Geophys. Res. Atmos.</i> <b>126</b>, e2019JD032361.</li>
+      <li id="ref-15">Dore, J. E. et al. (2009) "Physical and biogeochemical modulation of ocean acidification in the central North Pacific". <i>PNAS</i> <b>106</b>, 12235–12240. Station ALOHA, Hawaii Ocean Time-series.</li>
+      <li id="ref-16">Hua, Q. et al. (2021) "Atmospheric radiocarbon for the period 1950–2019". <i>Radiocarbon</i> <b>64</b>(4), 723–745.</li>
+      <li id="ref-17">Naegler, T. &amp; Levin, I. (2006) "Closing the global radiocarbon budget 1945–2005". <i>J. Geophys. Res.</i> <b>111</b>, D12311.</li>
+      <li id="ref-18">IPCC (2021) <i>Climate Change 2021: The Physical Science Basis</i>. Working Group I contribution to the Sixth Assessment Report. Cambridge University Press. Equilibrium climate sensitivity likely range, 2.5 to 4.0 K.</li>
+      <li id="ref-19">Box, G. E. P. (1976) <i>J. Am. Stat. Assoc.</i> <b>71</b>, 791–799, "Science and statistics", where the argument first appears. The exact wording most people quote, "essentially, all models are wrong, but some are useful", is from Box &amp; Draper (1987), <i>Empirical Model-Building and Response Surfaces</i>, p. 424.</li>
+    </ol>
   </div>
 </section>
 
@@ -665,9 +1091,11 @@
 <footer>
   <div class="wrap foot-row">
     <a href="../">← Nemo Explores</a>
-    <span>ANEMONE · a six-reservoir carbon cycle box model</span>
+    <a href="https://github.com/nems808/ANEMONE" target="_blank" rel="noopener">ANEMONE source ↗</a>
   </div>
 </footer>
+
+<div id="tip" class="tip" role="tooltip" aria-hidden="true"></div>
 
 <script type="module" src="app.js"></script>
 </body>
